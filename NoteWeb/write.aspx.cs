@@ -15,7 +15,6 @@ namespace NoteWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            conn.Open();
         }
 
         protected void submit_Click(object sender, EventArgs e)
@@ -23,7 +22,7 @@ namespace NoteWeb
             try
             {
                 conn.Open();
-                string sql = string.Format("INSERT INTO Note(Title,Note,CategoryID,Category,Date,FinishDate) VALUES (N'{0}', N'{1}', '{2}', N'{3}', '{4}') ", TextBoxTitle.Text, TextBoxNote.Text, TextBoxCategoryID.Text, DropDownListCategory.Text, DateTime.UtcNow.AddHours(08).ToString("yyyy-MM-dd"));
+                string sql = string.Format("INSERT INTO Note(Title,Recorder,Category,Date) VALUES (N'{0}', N'{1}', N'{2}', '{3}') ", TextBoxNote.Text, TextBoxTitle.Text, DropDownListCategory.Text, DateTime.UtcNow.AddHours(08).ToString("yyyy-MM-dd"));
                 cmd = new SqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
@@ -38,7 +37,6 @@ namespace NoteWeb
 
         protected void reset_Click(object sender, EventArgs e)
         {
-            TextBoxCategoryID.Text = "";
             TextBoxNote.Text = "";
             TextBoxTitle.Text = "";
         }

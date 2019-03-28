@@ -35,5 +35,5 @@
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server"
         ConnectionString="<%$ ConnectionStrings:DefaultConnection %>"
-        SelectCommand="SELECT [CategoryID], [Category] FROM [NoteCategory]"></asp:SqlDataSource>
+        SelectCommand="SELECT DISTINCT [Category] FROM [Note]"></asp:SqlDataSource>
 </asp:Content>

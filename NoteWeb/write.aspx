@@ -77,7 +77,7 @@
                     <asp:TextBox ID="TextBoxTitle" runat="server" Width="450px" Height="34px"></asp:TextBox>
                 </td>
                 <td class="auto-style10">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*紀錄者不能為空" ControlToValidate="titleBx">*紀錄者不能為空</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*紀錄者不能為空" ControlToValidate="TextBoxTitle">*紀錄者不能為空</asp:RequiredFieldValidator>
                 </td>
             </tr>
 
@@ -88,21 +88,22 @@
                     <asp:TextBox ID="TextBoxNote" runat="server" TextMode="MultiLine" Height="260px" Width="585px"></asp:TextBox>
                 </td>
                 <td class="auto-style6">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*內容不能為空" ControlToValidate="contentBx">*內容不能為空</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*內容不能為空" ControlToValidate="TextBoxNote">*內容不能為空</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style13">分類：
                 </td>
                 <td class="auto-style14">
-                    <asp:TextBox ID="TextBoxCategoryID" runat="server" Width="164px"></asp:TextBox>
-                    <br />
-                    <asp:DropDownList ID="DropDownListCategory" runat="server" DataSourceID="SqlDataSource1" DataTextField="Category" DataValueField="Category"></asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSourceCategory" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>" SelectCommand="SELECT [Category] FROM [NoteCategory]"></asp:SqlDataSource>
+                    <asp:DropDownList ID="DropDownListCategory" runat="server">
+                        <asp:ListItem Selected="True">個人紀錄</asp:ListItem>
+                        <asp:ListItem>工作紀錄</asp:ListItem>
+                        <asp:ListItem>家庭紀錄</asp:ListItem>
+                        <asp:ListItem>聚餐約會</asp:ListItem>
+                        <asp:ListItem>家庭活動</asp:ListItem>
+                    </asp:DropDownList>
                 </td>
-                <td class="auto-style15">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="*分類不能為空" ControlToValidate="contentBx">*分類不能為空</asp:RequiredFieldValidator>
-                </td>
+                <td class="auto-style15"></td>
             </tr>
             <tr>
                 <td class="auto-style7"></td>
