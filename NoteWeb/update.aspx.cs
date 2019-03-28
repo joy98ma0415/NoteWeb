@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace NoteWeb
 {
-    public partial class Contact : Page
+    public partial class update : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
